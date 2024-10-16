@@ -1,13 +1,21 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import img from "../../image/profile-img.png";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variant.js";
 
 export default function Home() {
   return (
     <>
       <main id="home" className=" margin border-bottom">
         <div className="row">
-          <div className="col-md-8 d-flex  align-items-center">
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="col-md-8 d-flex  align-items-center"
+          >
             <div className=" text-white">
               <div className="profile-content">
                 <h3 className="fadeIn1">
@@ -78,12 +86,17 @@ export default function Home() {
                 CV
               </a>
             </div>
-          </div>
-          <div className="col-md-4">
-            <div>
+          </motion.div>
+          <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+             className="col-md-4 ">
+            <div className=" d-flex img-opacity portfolio-img justify-content-center align-items-center">
               <img src={img} className="img-width" alt="" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </>

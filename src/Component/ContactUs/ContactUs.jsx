@@ -2,6 +2,8 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import Lottie from "lottie-react";
 import animate from "../../animation/Animation - 1729009419248.json";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variant.js";
 export default function ContactUs() {
   const [state, handleSubmit] = useForm("xeoqqlzq");
 
@@ -29,6 +31,20 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
+        <div className=" my-3 d-flex border-bottom justify-content-start align-items-center">
+          <div className="contact-email">
+            <i className="fa-sharp text-white fa fa-envelope"></i>
+            <p className="mt-3 mx-2 d-inline-block text-white">
+              ahmedradwaan897@gmail.com
+            </p>
+          </div>
+          <div>
+            <i className="fa-solid  ms-5 text-white fa-phone"></i>
+            <p className="mt-3 mx-2  d-inline-block text-white">
+              +20 1062895136
+            </p>
+          </div>
+        </div>
       </>
     );
   }
@@ -37,9 +53,15 @@ export default function ContactUs() {
     <>
       <section id="contactUs" className=" border-bottom">
         <h2 className=" text-white text-center">Contact Me</h2>
-        <div className="row">
-          <div className="col-md-8 ">
-            <div className="contact-form">
+        <div className="row mt-5">
+          <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="col-md-8 "
+          >
+            <div className="contact-form blur">
               <form onSubmit={handleSubmit}>
                 <label className="my-2 text-white" htmlFor="email">
                   Email Address
@@ -83,22 +105,14 @@ export default function ContactUs() {
                 </button>
               </form>
             </div>
-            <div className=" my-5 d-flex justify-content-between align-items-center">
-              <p className="mt-3 text-white">
-                <span className="mx-2">
-                  <i class="fa-sharp fa fa-envelope"></i>
-                </span>
-                ahmedradwaan897@gmail.com
-              </p>
-              <p className="mt-3 text-white">
-                <span className="mx-2">
-                  <i class="fa-solid fa-phone"></i>
-                </span>
-                +20 1062895136
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
+          </motion.div>
+          <motion.li
+            variants={fadeIn("left", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className="col-md-4"
+          >
             <div className="w-100">
               <Lottie
                 src="../../animation/Animation - 1729009419248.json"
@@ -108,6 +122,21 @@ export default function ContactUs() {
                 className=" w-100"
               />
             </div>
+          </motion.li>
+        </div>
+
+        <div className=" my-3 d-flex justify-content-start align-items-center">
+          <div className="contact-email">
+            <i className="fa-sharp text-white fa fa-envelope"></i>
+            <p className="mt-3 mx-2 d-inline-block text-white">
+              ahmedradwaan897@gmail.com
+            </p>
+          </div>
+          <div className="contact-email">
+            <i className="fa-solid  ms-5 text-white fa-phone"></i>
+            <p className="mt-3 mx-2  d-inline-block text-white">
+              +20 1062895136
+            </p>
           </div>
         </div>
       </section>

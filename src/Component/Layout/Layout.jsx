@@ -10,7 +10,7 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container margin">
         <Home />
         <Skills />
         <Projects />

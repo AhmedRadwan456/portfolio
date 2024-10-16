@@ -9,6 +9,8 @@ import img7 from "../../image/bandicam 2024-10-12 13-53-59-158.jpg";
 import img8 from "../../image/bandicam 2024-10-12 13-54-17-185.jpg";
 import img9 from "../../image/desktop-design.jpg";
 import img10 from "../../image/bandicam 2024-10-12 13-55-19-021.jpg";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variant.js";
 
 const data = [
   {
@@ -156,47 +158,85 @@ export default function Projects() {
           </p>
         </div>
 
-        <ul className=" list-unstyled d-flex justify-content-center align-items-center">
-          <li className=" mx-1">
+        <ul className=" list-unstyled font d-flex justify-content-center align-items-center">
+          <motion.li
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className=" mx-1"
+          >
             <button onClick={() => htmlCss()} className="btn btn-outline-light">
-              HTML and CSS
+              CSS
             </button>
-          </li>
-          <li className=" mx-1">
+          </motion.li>
+
+          <motion.li
+            variants={fadeIn("right", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className=" mx-1"
+          >
             <button
               onClick={() => htmlCssJava()}
               className="btn btn-outline-light"
             >
               JavaScript
             </button>
-          </li>
-          <li className=" mx-1">
+          </motion.li>
+          <motion.li
+            variants={fadeIn("right", 0.6)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className=" mx-1"
+          >
             <button onClick={() => reactJs()} className="btn btn-outline-light">
               React.JS
             </button>
-          </li>
-          <li className=" mx-1">
+          </motion.li>
+          <motion.li
+            variants={fadeIn("right", 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className=" mx-1"
+          >
             <button
               onClick={() => reactJsWithRedux()}
               className="btn btn-outline-light"
             >
-               Redux
+              Redux
             </button>
-          </li>
-          <li className=" mx-1">
+          </motion.li>
+          <motion.li
+            variants={fadeIn("right", 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            className=" mx-1"
+          >
             <button
               onClick={() => TypeScript()}
               className="btn btn-outline-light"
             >
-               TypeScript
+              TypeScript
             </button>{" "}
-          </li>
+          </motion.li>
         </ul>
 
         <div className="row my-4 g-4">
           {Arr.length > 0
             ? Arr.map((product) => (
-                <div key={product.id} className="col-md-6 col-lg-4">
+                <motion.div
+                  variants={fadeIn("down", 0.2)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.7 }}
+                  key={product.id}
+                  className="col-md-6 col-lg-4"
+                >
                   <div className="project-content product">
                     <img
                       src={product.imgUrl}
@@ -228,7 +268,7 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))
             : ""}
         </div>
