@@ -158,9 +158,9 @@ export default function Projects() {
           </p>
         </div>
 
-        <ul className=" list-unstyled font d-flex justify-content-center align-items-center">
+        <ul className="list-unstyled font d-flex justify-content-center align-items-center">
           <motion.li
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("left", 0.4)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
@@ -172,7 +172,7 @@ export default function Projects() {
           </motion.li>
 
           <motion.li
-            variants={fadeIn("right", 0.4)}
+            variants={fadeIn("left", 0.4)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
@@ -186,7 +186,7 @@ export default function Projects() {
             </button>
           </motion.li>
           <motion.li
-            variants={fadeIn("right", 0.6)}
+            variants={fadeIn("left", 0.6)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
@@ -197,7 +197,7 @@ export default function Projects() {
             </button>
           </motion.li>
           <motion.li
-            variants={fadeIn("right", 0.8)}
+            variants={fadeIn("left", 0.8)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}
@@ -211,7 +211,7 @@ export default function Projects() {
             </button>
           </motion.li>
           <motion.li
-            variants={fadeIn("right", 1)}
+            variants={fadeIn("left", 1)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.7 }}

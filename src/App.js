@@ -6,7 +6,11 @@ import Layout from "./Component/Layout/Layout";
 export default function App() {
   return (
     <>
-      <Layout />
+    <div className="container">
+       <Layout />
+    </div>
+    
+   
     </>
   );
 }

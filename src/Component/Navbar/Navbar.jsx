@@ -9,7 +9,7 @@ export default function Navbar() {
             Ahmed
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler nav-icon"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
