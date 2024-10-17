@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img1 from "../../image/active-states.jpg";
 import img2 from "../../image/bandicam 2024-10-12 13-48-24-130.jpg";
 import img3 from "../../image/grid-system.jpg";
@@ -116,8 +116,17 @@ const data = [
 ];
 
 export default function Projects() {
+
+  const [isVisible, setIsVisible] = useState(true);
   const defaul = data.filter((project) => project.category === "HTML and CSS");
   const [Arr, setArr] = useState(defaul);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   function htmlCss() {
     const newArr = data.filter(
@@ -156,76 +165,102 @@ export default function Projects() {
           <p className=" text-center">
             Here is my projects to represent my Expertise
           </p>
-        </div>
+        </div>{" "}
+        <ul className="list-unstyled gx-2  row gy-3 font d-flex justify-content-center align-items-center">
+          <div className="col-6 col-md-2 ">
+            {" "}
+            <motion.li
+              variants={fadeIn("left", 0.4)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
+            >
+              <button
+                onClick={() => htmlCss()}
+                className="btn w-100 btn-outline-light"
+              >
+                HTML CSS
+              </button>
+            </motion.li>
+          </div>
 
-        <ul className="list-unstyled font d-flex justify-content-center align-items-center">
-          <motion.li
-            variants={fadeIn("left", 0.4)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className=" mx-1"
-          >
-            <button onClick={() => htmlCss()} className="btn btn-outline-light">
-              CSS
-            </button>
-          </motion.li>
+          <div className="col-6 col-md-2 ">
+            <motion.li
+              variants={fadeIn("left", 0.4)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
+            >
+              <button
+                onClick={() => htmlCssJava()}
+                className="btn w-100 btn-outline-light"
+              >
+                JavaScript
+              </button>
+            </motion.li>
+          </div>
 
-          <motion.li
-            variants={fadeIn("left", 0.4)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className=" mx-1"
-          >
-            <button
-              onClick={() => htmlCssJava()}
-              className="btn btn-outline-light"
+          <div className="col-6 col-md-2 ">
+            {" "}
+            <motion.li
+              variants={fadeIn("left", 0.6)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
             >
-              JavaScript
-            </button>
-          </motion.li>
-          <motion.li
-            variants={fadeIn("left", 0.6)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className=" mx-1"
-          >
-            <button onClick={() => reactJs()} className="btn btn-outline-light">
-              React.JS
-            </button>
-          </motion.li>
-          <motion.li
-            variants={fadeIn("left", 0.8)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className=" mx-1"
-          >
-            <button
-              onClick={() => reactJsWithRedux()}
-              className="btn btn-outline-light"
+              <button
+                onClick={() => reactJs()}
+                className="btn w-100 btn-outline-light"
+              >
+                React.JS
+              </button>
+            </motion.li>
+          </div>
+
+          <div className="col-6 col-md-2 ">
+            {" "}
+            <motion.li
+              variants={fadeIn("left", 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
             >
-              Redux
-            </button>
-          </motion.li>
-          <motion.li
-            variants={fadeIn("left", 1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className=" mx-1"
-          >
-            <button
-              onClick={() => TypeScript()}
-              className="btn btn-outline-light"
+              <button
+                onClick={() => reactJsWithRedux()}
+                className="btn w-100 btn-outline-light"
+              >
+                Redux
+              </button>
+            </motion.li>
+          </div>
+
+          <div className="col-6 col-md-2 ">
+            {" "}
+            <motion.li
+              variants={fadeIn("left", 1)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
             >
-              TypeScript
-            </button>{" "}
-          </motion.li>
+              <button
+                onClick={() => TypeScript()}
+                className="btn w-100 btn-outline-light"
+              >
+                TypeScript
+              </button>{" "}
+            </motion.li>
+          </div>
         </ul>
-
         <div className="row my-4 g-4">
           {Arr.length > 0
             ? Arr.map((product) => (
@@ -233,7 +268,8 @@ export default function Projects() {
                   variants={fadeIn("down", 0.2)}
                   initial="hidden"
                   whileInView="show"
-                  viewport={{ once: false, amount: 0.7 }}
+                  viewport={{ once: true, amount: 0.7 }}
+                  animate={isVisible ? "show" : "exit"}
                   key={product.id}
                   className="col-md-6 col-lg-4"
                 >

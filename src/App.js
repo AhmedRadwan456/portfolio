@@ -6,7 +6,7 @@ import Layout from "./Component/Layout/Layout";
 export default function App() {
   return (
     <>
-    <div className="container">
+    <div className="container ">
        <Layout />
     </div>
     
