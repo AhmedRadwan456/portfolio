@@ -38,7 +38,10 @@ export default function Home() {
                   <span>
                     {" "}
                     <Typewriter
-                      words={["Front End Developer"]}
+                      words={[
+                        "Front End Developer",
+                        "Mobile App Using React Native",
+                      ]}
                       loop
                       cursor
                       cursorStyle="|"
@@ -86,11 +89,11 @@ export default function Home() {
                       <i className="fa-brands text-black fa-linkedin"></i>
                     </a>
                   </li>
-                </ul>{" "}
+                </ul>
               </div>
               <a
                 className="btn button-hover btn-outline-success fs-5 w-50 fadeIn7"
-                href="https://drive.google.com/file/d/1J7i3_ZAbxvABnjsZm2tCE2SHUXr4Lgtq/view?usp=sharing"
+                href="https://drive.google.com/file/d/1eemVGTZuHPQTNY7eN_MRvlitnXsraojh/view"
                 target="_blank"
               >
                 CV
@@ -104,7 +107,7 @@ export default function Home() {
             whileInView="show"
             viewport={{ once: true, amount: 0.7 }}
             animate={isVisible ? "show" : "exit"}
-            className="col-md-4 "
+            className="col-md-4"
           >
             <div className=" d-flex img-opacity portfolio-img justify-content-center align-items-center">
               <img src={img} className="img-width" alt="" />

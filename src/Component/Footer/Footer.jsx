@@ -20,7 +20,7 @@ export default function Footer() {
           <a
             className="decoration-non color-link mx-1"
             target="_blank"
-            href="https://drive.google.com/file/d/1J7i3_ZAbxvABnjsZm2tCE2SHUXr4Lgtq/view?usp=sharing"
+            href="https://drive.google.com/file/d/1eemVGTZuHPQTNY7eN_MRvlitnXsraojh/view"
           >
             CV
           </a>

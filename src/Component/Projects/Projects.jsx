@@ -9,6 +9,7 @@ import img7 from "../../image/bandicam 2024-10-12 13-53-59-158.jpg";
 import img8 from "../../image/bandicam 2024-10-12 13-54-17-185.jpg";
 import img9 from "../../image/desktop-design.jpg";
 import img10 from "../../image/bandicam 2024-10-12 13-55-19-021.jpg";
+import img11 from "../../image/bandicam 2025-03-24 23-35-38-206.jpg";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variant.js";
 
@@ -113,10 +114,19 @@ const data = [
     demo: "https://games-azure-eight.vercel.app/",
     code: "https://github.com/AhmedRadwan456/Games",
   },
+  {
+    id: 11,
+    title: "Games",
+    category: "Next Js and Tailwind CSS and TypeScript",
+    imgUrl: img11,
+    paragraph:
+      "The Game Platform is an engaging web application that offers users a rich selection of games to play online. Designed with a focus on user experience, this platform provides a seamless interface for gamers to explore various genres and enjoy their favorite titles.",
+    demo: "https://game-app-umber-five.vercel.app/",
+    code: "https://github.com/AhmedRadwan456/Game-app",
+  },
 ];
 
 export default function Projects() {
-
   const [isVisible, setIsVisible] = useState(true);
   const defaul = data.filter((project) => project.category === "HTML and CSS");
   const [Arr, setArr] = useState(defaul);
@@ -153,6 +163,13 @@ export default function Projects() {
   function TypeScript() {
     const newArr = data.filter(
       (project) => project.category === "React Js and redux and TypeScript"
+    );
+    setArr(newArr);
+  }
+  function Nextjs() {
+    const newArr = data.filter(
+      (project) =>
+        project.category === "Next Js and Tailwind CSS and TypeScript"
     );
     setArr(newArr);
   }
@@ -257,6 +274,25 @@ export default function Projects() {
                 className="btn w-100 btn-outline-light"
               >
                 TypeScript
+              </button>{" "}
+            </motion.li>
+          </div>
+
+          <div className="col-6 col-md-2 ">
+            {" "}
+            <motion.li
+              variants={fadeIn("left", 1)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.7 }}
+              animate={isVisible ? "show" : "exit"}
+              className=" "
+            >
+              <button
+                onClick={() => Nextjs()}
+                className="btn w-100 btn-outline-light"
+              >
+                NextJs
               </button>{" "}
             </motion.li>
           </div>
